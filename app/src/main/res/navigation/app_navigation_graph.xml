@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="lucassamel.br.tp3_kotlinandroid.ui.login.LoginFragment"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="lucassamel.br.tp3_kotlinandroid.ui.register.RegisterFragment"
+        android:label="register_fragment"
+        tools:layout="@layout/register_fragment" />
+    <fragment
+        android:id="@+id/carroFormFragment"
+        android:name="lucassamel.br.tp3_kotlinandroid.ui.carro.form.CarroFormFragment"
+        android:label="carro_form_fragment"
+        tools:layout="@layout/carro_form_fragment" />
+    <fragment
+        android:id="@+id/carroListFragment"
+        android:name="lucassamel.br.tp3_kotlinandroid.ui.carro.list.CarroListFragment"
+        android:label="carro_list_fragment"
+        tools:layout="@layout/carro_list_fragment" />
+</navigation>
