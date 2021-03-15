@@ -6,13 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import kotlinx.android.synthetic.main.carro_list_fragment.*
 import lucassamel.br.tp3_kotlinandroid.R
 
 class CarroListFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = CarroListFragment()
-    }
+
 
     private lateinit var viewModel: CarroListViewModel
 
@@ -23,10 +23,12 @@ class CarroListFragment : Fragment() {
         return inflater.inflate(R.layout.carro_list_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(CarroListViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        fabtnCarroForm.setOnClickListener {
+            findNavController().navigate(R.id.action_carroListFragment_to_carroFormFragment)
+        }
     }
 
 }

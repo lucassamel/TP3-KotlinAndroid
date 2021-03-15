@@ -33,10 +33,26 @@
         android:id="@+id/carroFormFragment"
         android:name="lucassamel.br.tp3_kotlinandroid.ui.carro.form.CarroFormFragment"
         android:label="carro_form_fragment"
-        tools:layout="@layout/carro_form_fragment" />
+        tools:layout="@layout/carro_form_fragment" >
+        <action
+            android:id="@+id/action_carroFormFragment_to_carroListFragment"
+            app:destination="@id/carroListFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
     <fragment
         android:id="@+id/carroListFragment"
         android:name="lucassamel.br.tp3_kotlinandroid.ui.carro.list.CarroListFragment"
         android:label="carro_list_fragment"
-        tools:layout="@layout/carro_list_fragment" />
+        tools:layout="@layout/carro_list_fragment" >
+        <action
+            android:id="@+id/action_carroListFragment_to_carroFormFragment"
+            app:destination="@id/carroFormFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
 </navigation>
