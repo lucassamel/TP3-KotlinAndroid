@@ -1,6 +1,5 @@
 package lucassamel.br.tp3_kotlinandroid.ui.carro.form
 
-import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -8,10 +7,8 @@ import lucassamel.br.tp3_kotlinandroid.dao.CarroDaoFirestore
 import lucassamel.br.tp3_kotlinandroid.model.Carro
 
 class CarroFormViewModel(
-    private val carroDao: CarroDaoFirestore,
-    application: Application
+    private val carroDao: CarroDaoFirestore
 ) : ViewModel() {
-    private val app = application
 
     private val _status = MutableLiveData<Boolean>()
     val status: LiveData<Boolean> = _status
