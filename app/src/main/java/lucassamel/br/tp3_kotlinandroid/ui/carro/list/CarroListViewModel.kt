@@ -9,7 +9,6 @@ import lucassamel.br.tp3_kotlinandroid.model.Carro
 
 class CarroListViewModel(private val carroDao: CarroDao) : ViewModel() {
 
-
     private val _carros = MutableLiveData<List<Carro>>()
     val carros: LiveData<List<Carro>> = _carros
 

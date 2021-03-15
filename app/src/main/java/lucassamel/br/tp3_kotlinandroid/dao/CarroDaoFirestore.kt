@@ -7,35 +7,35 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
 import lucassamel.br.tp3_kotlinandroid.model.Carro
 
-class CarroDaoFirestore {
+class CarroDaoFirestore : CarroDao {
 
     private val collection = FirebaseFirestore
         .getInstance()
         .collection("carros")
 
-    fun insert(carro: Carro): Task<Void> {
+    override fun insert(carro: Carro): Task<Void> {
         return collection
             .document(carro.modelo!!)
             .set(carro)
     }
-    fun delete(carro: Carro): Task<Void> {
+    override fun delete(carro: Carro): Task<Void> {
         return collection
             .document(carro.modelo!!)
             .delete()
     }
-    fun get(placa: String): Task<DocumentSnapshot> {
+    override fun get(placa: String): Task<DocumentSnapshot> {
         return collection
             .document(placa)
             .get()
     }
 
-    fun selectByMarca(modelo: String): Task<QuerySnapshot> {
+    override fun selectByMarca(modelo: String): Task<QuerySnapshot> {
         return collection
             .whereEqualTo("modelo", modelo)
             .get()
     }
 
-    fun all(): CollectionReference {
+    override fun all(): CollectionReference {
         return collection
     }
 }
