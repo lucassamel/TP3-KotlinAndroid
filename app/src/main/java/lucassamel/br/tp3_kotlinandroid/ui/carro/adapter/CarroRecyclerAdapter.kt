@@ -41,9 +41,13 @@ class CarroRecyclerAdapter(
         holder.textModelo.text = carro.modelo
         holder.textPreco.text = carro.preco
         holder.textAno.text = carro.ano
+        holder.itemView.btnRecyclerCarroDelete.setOnClickListener {
+            deleteCarro(carro)
+        }
 
         holder.itemView.setOnClickListener {
             actionClick(carro)
+
         }
     }
 
